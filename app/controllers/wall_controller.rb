@@ -29,7 +29,11 @@ class WallController < ApplicationController
       redirect_to :back
      end
    end
-   
+
+
+   def delete
+     @post_delete = Post.find(params[:id]) 
+   end
 
   def posts
 		@posts = Post.all
