@@ -1,4 +1,7 @@
 class WallController < ApplicationController
+  before_action :login_check
+  skip_before_action :login_check, :only => [:posts]
+
   def write
   end
 
@@ -58,7 +61,7 @@ class WallController < ApplicationController
 
      redirect_to "/wall/posts" 
    end
-   
+
 
   def posts
 		@posts = Post.all
