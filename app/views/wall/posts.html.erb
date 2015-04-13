@@ -1,4 +1,9 @@
 <div>
+  <h4><%= flash[:alert] %></h4>
+  <a href="/user/signup">sign up</a>
+</div>
+
+<div>
  <a href="/user/signup">sign up</a>
 </div>
 
@@ -19,3 +24,7 @@
 	<% end %>
 	<a href="/wall/write">Write post again</a>
 </div>
+
+<% User.all.each do |user| %>
+<p><%= user.username %></p>
+<% end %>
